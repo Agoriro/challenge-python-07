@@ -78,7 +78,7 @@ def run():
     all_Platzi_workers =  list(filter(lambda elem: elem['organization']=='Platzi',DATA)) # Using filter, generate a list with all the Platzi workers
     adults =  list(filter(lambda elem: elem['age']>18,DATA)) # Using filter, generate a list with all people over 18 years old
     workers =  list(map(lambda elem: {'name': elem['name'], 'organization': elem['organization'],'homeless':'True'} if (elem['organization'] != '') else {'name': elem['name'],'organization': elem['organization'],'homeless':'False'},DATA)) # Using map, generate a new list of people with a key 'homeless' with True or False values, if 'organization' have something or not
-    old_people =  list(map(lambda elem: {'name': elem['name'],'age': elem['age'], 'homeless':'True'} if (elem['age'] >= 18) else {'name': elem['name'],'age': elem['age'],'homeless':'False'},DATA)) # Using map, generate a new list of people with a key 'old' with True or False values, if 'age' is greater than 30 or not
+    old_people =  list(map(lambda elem: {'name': elem['name'],'age': elem['age'], 'old':'True'} if (elem['age'] >= 18) else {'name': elem['name'],'age': elem['age'],'old':'False'},DATA)) # Using map, generate a new list of people with a key 'old' with True or False values, if 'age' is greater than 30 or not
 
     print('Python devs: ')
     for dev in all_python_devs:
